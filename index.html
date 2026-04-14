@@ -3,43 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Greatest Showman - Home</title>
+    <meta name="description" content="Sito Fan di The Greatest Showman - Scopri la storia e il cast.">
+    <title>The Greatest Showman | Home</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <nav class="navbar">
-    <a href="index.html" class="active">HOME</a>
-    <a href="cast.html">IL CAST</a>
-    <a href="musica.html">LE CANZONI</a>
+    <div class="logo">TGS</div>
+    <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="cast.html">Cast</a>
+        <a href="musica.html">Musica</a>
+    </div>
 </nav>
 
 <header class="hero">
-    <h1>THE GREATEST SHOWMAN</h1>
-    <p>Benvenuti nel mondo di P.T. Barnum</p>
+    <div class="hero-overlay">
+        <h1>THE GREATEST SHOWMAN</h1>
+        <p>L'arte più nobile è quella di rendere gli altri felici</p>
+    </div>
 </header>
 
 <main class="container">
-    <section class="box">
-        <h2>La Storia</h2>
-        <p>Phineas Taylor Barnum è un visionario che trasforma la diversità nella più grande forma di spettacolo mai vista. Una storia di sogni e coraggio.</p>
+    <section class="intro">
+        <h2>La Storia di un Visionario</h2>
+        <div class="divider"></div>
+        <p>Phineas Taylor Barnum ha trasformato la sua immaginazione in un impero. Partendo da umili origini, ha riunito un gruppo di persone straordinarie per creare quello che oggi chiamiamo show business. Una storia di sogni, amore e accettazione universale.</p>
     </section>
 
-    <section class="grid-nav">
+    <section class="quick-nav">
         <a href="cast.html" class="nav-card">
-            <h3>Scopri il Cast</h3>
-            <p>Guarda i 7 personaggi protagonisti e le loro storie.</p>
-            <span>VAI AL CAST &rarr;</span>
+            <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600');"></div>
+            <div class="card-content">
+                <h3>I Protagonisti</h3>
+                <p>Scopri i 7 personaggi del cast</p>
+            </div>
         </a>
 
         <a href="musica.html" class="nav-card">
-            <h3>Ascolta la Musica</h3>
-            <p>Tutti i brani della colonna sonora originale.</p>
-            <span>VAI ALLE CANZONI &rarr;</span>
+            <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1514525253361-b83f859b73c0?q=80&w=600');"></div>
+            <div class="card-content">
+                <h3>Colonna Sonora</h3>
+                <p>Ascolta i brani leggendari</p>
+            </div>
         </a>
     </section>
 </main>
 
-<footer><p>&copy; 2026 Fan Portal</p></footer>
+<footer>
+    <p>&copy; 2026 The Greatest Showman Fan Portal</p>
+</footer>
+
 </body>
 </html>
