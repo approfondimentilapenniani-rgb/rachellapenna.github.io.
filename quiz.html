@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz: Che Personaggio Sei? | TGS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">BARNUM'S CIRCUS</div>
+    <div class="nav-links"><a href="index.html">Home</a></div>
+</nav>
+
+<main class="container">
+    <h2 class="section-title">Che Personaggio Sei?</h2>
+    <div id="quiz-container" class="music-grid">
+        <div class="music-card">
+            <p><strong>1. Qual è la tua reazione davanti a un fallimento?</strong></p>
+            <button onclick="addPoint('A')">A) Mi invento subito un piano B</button><br>
+            <button onclick="addPoint('B')">B) Cerco il supporto degli amici</button><br>
+            <button onclick="addPoint('C')">C) Cerco di proteggere ciò che resta</button><br>
+            <button onclick="addPoint('D')">D) Mi chiudo in me stesso</button>
+        </div>
+        <button class="btn-result" onclick="showResult()">SCOPRI IL RISULTATO</button>
+    </div>
+    <div id="result-area" style="display:none; text-align:center; margin-top:30px;">
+        <h3 id="char-name" style="color:#d4af37; font-size:2rem;"></h3>
+        <p id="char-desc"></p>
+    </div>
+</main>
+
+<script>
+    let scores = { A: 0, B: 0, C: 0, D: 0 };
+    function addPoint(letter) { scores[letter]++; alert("Risposta registrata!"); }
+    function showResult() {
+        let max = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+        document.getElementById('quiz-container').style.display = 'none';
+        document.getElementById('result-area').style.display = 'block';
+        if(max === 'A') { document.getElementById('char-name').innerText = "Sei P.T. BARNUM 🎩"; }
+        else if(max === 'B') { document.getElementById('char-name').innerText = "Sei ANNE o PHILLIP 🎪"; }
+        else if(max === 'C') { document.getElementById('char-name').innerText = "Sei CHARITY 🏠"; }
+        else { document.getElementById('char-name').innerText = "Sei LETTIE o JENNY 🎤"; }
+    }
+</script>
+</body>
+</html>
