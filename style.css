@@ -1,93 +1,262 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    background-color: #121212; 
-    color: #e0e0e0; 
-    font-family: 'Poppins', sans-serif; 
-    line-height: 1.7;
+/* =========================================
+   1. VARIABILI E RESET
+   ========================================= */
+:root {
+    --primary-red: #5e0b15;    /* Rosso Velluto */
+    --accent-gold: #d4af37;     /* Oro Caldo */
+    --dark-bg: #0a0a0a;         /* Nero Profondo */
+    --card-bg: #1a1a1a;         /* Grigio Scuro Card */
+    --text-light: #e0e0e0;
+    --transition: all 0.3s ease;
 }
 
-/* NAVBAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
 .navbar {
     background: #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
-    border-bottom: 3px solid #d4af37;
+    padding: 20px 5%;
+    border-bottom: 2px solid var(--accent-gold);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
-.logo { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 1.5rem; letter-spacing: 2px; }
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent-gold);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    margin-left: 25px;
+    margin-left: 20px;
     font-size: 0.85rem;
     text-transform: uppercase;
     font-weight: 600;
-    transition: 0.3s;
+    transition: var(--transition);
 }
-.nav-links a:hover, .nav-links a.active { color: #d4af37; border-bottom: 1px solid #d4af37; }
 
-/* HERO HOME */
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-gold);
+}
+
+/* =========================================
+   3. HERO E CONTENUTI GENERALI
+   ========================================= */
 .hero-home {
-    height: 65vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1505672678657-cc7037095e60?q=80&w=1600') center/cover;
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1514525253361-b83f859b73c0?q=80&w=1600') center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-bottom: 5px solid #5e0b15;
 }
-.hero-content h1 { font-family: 'Playfair Display', serif; font-size: 4rem; color: #d4af37; margin-bottom: 10px; }
 
-/* CONTAINER */
-.container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
-.section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: 3rem; color: #d4af37; margin-bottom: 50px; }
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--accent-gold);
+}
 
-/* TRAMA */
-.trama-section { display: flex; gap: 40px; align-items: center; margin-bottom: 80px; }
+.container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--accent-gold);
+    margin-bottom: 50px;
+}
+
+/* =========================================
+   4. TRAMA E LAYOUT DASHBOARD
+   ========================================= */
+.trama-section {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
 .trama-section.reverse { flex-direction: row-reverse; }
-.text-block h3 { color: #5e0b15; font-size: 1.8rem; margin-bottom: 15px; border-bottom: 2px solid #d4af37; display: inline-block; }
-.img-trama { width: 400px; border-radius: 10px; border: 2px solid #d4af37; }
 
-/* CAST CARD */
-.cast-container { display: flex; flex-direction: column; gap: 40px; }
-.card-personaggio { 
-    display: flex; 
-    background: #1a1a1a; 
-    border: 1px solid #d4af37; 
-    border-radius: 15px; 
+.img-trama {
+    width: 450px;
+    border-radius: 10px;
+    border: 2px solid var(--accent-gold);
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.nav-card {
+    height: 200px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--primary-red);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.nav-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+    background: var(--primary-red);
+}
+
+/* =========================================
+   5. GALLERIA (NUOVA SEZIONE)
+   ========================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
     overflow: hidden;
-    transition: 0.3s;
+    border: 1px solid var(--accent-gold);
+    height: 300px;
+    transition: var(--transition);
 }
-.card-personaggio:hover { transform: scale(1.02); box-shadow: 0 0 20px #5e0b15; }
-.card-personaggio img { width: 250px; height: 350px; object-fit: cover; }
-.desc { padding: 30px; }
-.desc h3 { color: #d4af37; margin-bottom: 15px; font-size: 1.8rem; font-family: 'Playfair Display', serif; }
-.quote { font-style: italic; color: #d4af37; margin-top: 20px; border-left: 3px solid #5e0b15; padding-left: 15px; }
 
-/* MUSIC */
-.music-grid { display: grid; gap: 20px; }
-.music-card { background: #1a1a1a; border-left: 5px solid #d4af37; padding: 30px; border-radius: 10px; }
-.music-card h3 { color: #d4af37; margin-bottom: 10px; }
-.m-info { font-size: 0.9rem; color: #aaa; }
-.m-desc { margin: 15px 0; font-style: italic; }
-.music-card a { 
-    background: #5e0b15; 
-    color: #fff; 
-    padding: 10px 20px; 
-    text-decoration: none; 
-    border-radius: 5px; 
-    display: inline-block; 
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(94, 11, 21, 0.9);
+    color: white;
+    padding: 10px;
+    text-align: center;
     font-size: 0.8rem;
-    font-weight: bold;
+    transform: translateY(100%);
+    transition: var(--transition);
 }
 
-footer { text-align: center; padding: 50px; background: #000; border-top: 2px solid #d4af37; font-size: 0.8rem; }
+.gallery-item:hover .img-caption {
+    transform: translateY(0);
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.quote-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: var(--primary-red);
+    color: var(--accent-gold);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: center;
+    border: 2px solid var(--accent-gold);
+}
+
+/* =========================================
+   6. QUIZ E MUSIC CARDS
+   ========================================= */
+.music-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.music-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-left: 5px solid var(--accent-gold);
+    border-radius: 5px;
+}
+
+/* Pulsanti Quiz */
+#quiz-container button {
+    background: transparent;
+    border: 1px solid var(--accent-gold);
+    color: white;
+    padding: 10px 15px;
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#quiz-container button:hover {
+    background: var(--accent-gold);
+    color: black;
+}
+
+.btn-result {
+    background: var(--primary-red) !important;
+    text-align: center !important;
+    font-weight: bold;
+    margin-top: 20px !important;
+}
+
+/* =========================================
+   7. FOOTER E RESPONSIVE
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid var(--primary-red);
+    margin-top: 50px;
+    font-size: 0.8rem;
+    color: #888;
+}
 
 @media (max-width: 768px) {
-    .trama-section, .trama-section.reverse, .card-personaggio { flex-direction: column; text-align: center; }
-    .img-trama, .card-personaggio img { width: 100%; }
+    .trama-section, .trama-section.reverse {
+        flex-direction: column;
+    }
+    .img-trama {
+        width: 100%;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
 }
