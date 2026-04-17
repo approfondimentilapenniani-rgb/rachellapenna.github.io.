@@ -1,5 +1,5 @@
 /* =========================================
-   1. VARIABILI E BASE
+   1. BASE E NAVBAR (Pulita e Classica)
    ========================================= */
 :root {
     --primary-red: #5e0b15;    
@@ -7,7 +7,6 @@
     --dark-bg: #0a0a0a;         
     --card-bg: #1a1a1a;         
     --text-light: #f4f4f4;
-    --transition: all 0.3s ease;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,7 +18,7 @@ body {
     line-height: 1.6;
 }
 
-.container { max-width: 1200px; margin: 40px auto; padding: 0 25px; }
+.container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
 
 .section-title {
     text-align: center;
@@ -29,9 +28,6 @@ body {
     margin-bottom: 50px;
 }
 
-/* =========================================
-   2. NAVBAR
-   ========================================= */
 .navbar {
     background: #000;
     display: flex;
@@ -42,73 +38,76 @@ body {
     position: sticky; top: 0; z-index: 1000;
 }
 
-.logo { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.6rem; font-weight: 700; }
+.logo { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.5rem; font-weight: bold; }
 .nav-links a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; }
 .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); }
 
 /* =========================================
-   3. CAST (STILE PREMIUM)
+   2. CAST (SISTEMATO: ELEGANTE MA SOLIDO)
    ========================================= */
-.cast-container { display: flex; flex-direction: column; gap: 50px; }
+.cast-container { display: flex; flex-direction: column; gap: 40px; }
 
 .card-personaggio {
     display: flex;
-    background: rgba(26, 26, 26, 0.6);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+    background: var(--card-bg);
+    border-radius: 15px;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card-personaggio:hover {
     transform: translateY(-5px);
     border-color: var(--accent-gold);
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
 }
 
 .card-personaggio img {
-    width: 350px;
-    height: 450px;
+    width: 300px; /* Dimensione fissa per non rompere il layout */
+    height: 400px;
     object-fit: cover;
     border-right: 3px solid var(--accent-gold);
-    transition: 0.4s;
-    filter: grayscale(30%);
 }
 
-.card-personaggio:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-}
-
-.desc { padding: 45px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
-.desc h3 { color: var(--accent-gold); font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 5px; }
-.desc .attore-nome { color: var(--primary-red); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 20px; letter-spacing: 2px; }
+.desc { padding: 30px; flex: 1; }
+.desc h3 { color: var(--accent-gold); font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 10px; }
+.desc .attore-nome { color: var(--primary-red); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 15px; }
 
 /* =========================================
-   4. MUSICA (BOTTONI "PUSH" MODERNI)
+   3. MUSICA (DESCRIZIONI LUNGHE E PULSANTI)
    ========================================= */
-.music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-.music-card {
-    background: var(--card-bg);
-    padding: 35px;
-    border-radius: 15px;
-    border-top: 4px solid var(--primary-red);
-    text-align: center;
+.music-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 25px; 
 }
 
+.music-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    border-top: 5px solid var(--primary-red);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spinge il bottone sempre in fondo */
+}
+
+.music-card h3 { color: var(--accent-gold); margin-bottom: 15px; text-align: center; }
+.music-card p { font-size: 0.95rem; margin-bottom: 10px; color: #ddd; }
+.music-card strong { color: var(--accent-gold); }
+
+/* IL BOTTONE CHE TI PIACEVA */
 .btn-music {
     display: inline-block;
     margin-top: 20px;
-    padding: 12px 25px;
+    padding: 12px 20px;
     background-color: transparent;
     color: var(--accent-gold);
     text-decoration: none;
     border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 0.8rem;
+    font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
     border: 2px solid var(--accent-gold);
     transition: all 0.3s ease;
 }
@@ -116,28 +115,58 @@ body {
 .btn-music:hover {
     background-color: var(--accent-gold);
     color: #000;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
 
 /* =========================================
-   5. CURIOSITÀ E GALLERIA (STILE CLASSICO)
+   4. CURIOSITÀ (RISOLTA SOVRAPPOSIZIONE)
    ========================================= */
-.curiosita-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
-.curiosita-card { background: var(--card-bg); padding: 30px; border-radius: 15px; border-left: 5px solid var(--accent-gold); }
-.num-curiosita { font-size: 1.5rem; color: var(--primary-red); font-weight: 800; display: block; margin-bottom: 10px; }
+.curiosita-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
 
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
-.gallery-item { height: 300px; overflow: hidden; border-radius: 12px; border: 1px solid #333; }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+.curiosita-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-gold);
+}
+
+.num-curiosita { color: var(--primary-red); font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; display: block; }
+
+/* =========================================
+   5. GALLERIA (SOLO FOTO)
+   ========================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
 .gallery-item:hover img { transform: scale(1.1); }
 
 /* =========================================
    6. RESPONSIVE
    ========================================= */
-footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; }
-
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     .card-personaggio { flex-direction: column; }
-    .card-personaggio img { width: 100%; height: 350px; border-right: none; border-bottom: 3px solid var(--accent-gold); }
+    .card-personaggio img { width: 100%; height: 300px; border-right: none; border-bottom: 3px solid var(--accent-gold); }
+    .section-title { font-size: 2.2rem; }
 }
+
+footer { text-align: center; padding: 40px; color: #666; font-size: 0.8rem; }
