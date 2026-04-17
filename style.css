@@ -70,7 +70,7 @@ body {
 .nav-card:hover { transform: translateY(-10px); background: var(--primary-red); border-color: var(--accent-gold); }
 
 /* =========================================
-   4. CAST (SISTEMATO)
+   4. CAST (ORIZZONTALE)
    ========================================= */
 .cast-container { display: flex; flex-direction: column; gap: 40px; }
 .card-personaggio {
@@ -88,22 +88,24 @@ body {
 .desc .attore-nome { color: var(--primary-red); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 15px; letter-spacing: 1px; }
 
 /* =========================================
-   5. MUSICA (SISTEMATO)
+   5. MUSICA (DETTAGLIATA)
    ========================================= */
-.music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
 .music-card {
     background: linear-gradient(145deg, #1e1e1e, #111);
-    padding: 40px;
+    padding: 30px;
     border-radius: 15px;
-    text-align: center;
     border-top: 5px solid var(--primary-red);
     transition: var(--transition);
+    text-align: left; /* Allineamento per leggere bene i dettagli */
 }
 .music-card:hover { border-top-color: var(--accent-gold); transform: translateY(-5px); }
-.music-card h3 { color: var(--accent-gold); margin-bottom: 15px; }
+.music-card h3 { color: var(--accent-gold); margin-bottom: 15px; text-align: center; font-family: 'Playfair Display', serif; }
+.music-card p { font-size: 0.9rem; color: #ccc; margin-bottom: 8px; }
+.music-card strong { color: var(--accent-gold); }
 
 /* =========================================
-   6. CURIOSITÀ (RISOLTA SOVRAPPOSIZIONE)
+   6. CURIOSITÀ (GRIGLIA FLUIDA)
    ========================================= */
 .curiosita-grid {
     display: grid;
@@ -121,20 +123,15 @@ body {
 .num-curiosita { font-size: 1.5rem; color: var(--primary-red); font-weight: 800; margin-bottom: 10px; display: block; }
 
 /* =========================================
-   7. GALLERIA
+   7. GALLERIA (SOLO FOTO)
    ========================================= */
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
-.gallery-item { position: relative; height: 300px; overflow: hidden; border-radius: 12px; border: 1px solid var(--accent-gold); }
+.gallery-item { position: relative; height: 300px; overflow: hidden; border-radius: 12px; border: 1px solid #333; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-.gallery-item:hover img { transform: scale(1.1); filter: brightness(0.6); }
-.img-caption {
-    position: absolute; bottom: 0; width: 100%; background: rgba(94, 11, 21, 0.9);
-    color: #fff; padding: 15px; text-align: center; transform: translateY(100%); transition: var(--transition);
-}
-.gallery-item:hover .img-caption { transform: translateY(0); }
+.gallery-item:hover img { transform: scale(1.1); filter: brightness(0.8); }
 
 /* =========================================
-   8. RESPONSIVE
+   8. FOOTER E RESPONSIVE
    ========================================= */
 footer { text-align: center; padding: 60px; color: #555; border-top: 1px solid #222; margin-top: 40px; }
 
@@ -142,4 +139,5 @@ footer { text-align: center; padding: 60px; color: #555; border-top: 1px solid #
     .trama-section, .trama-section.reverse, .card-personaggio { flex-direction: column; text-align: center; }
     .img-trama, .card-personaggio img { width: 100%; }
     .card-personaggio img { border-right: none; border-bottom: 4px solid var(--accent-gold); }
+    .music-card { text-align: center; }
 }
