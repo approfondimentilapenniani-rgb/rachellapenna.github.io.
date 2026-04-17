@@ -88,7 +88,7 @@ body {
 .desc .attore-nome { color: var(--primary-red); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 15px; letter-spacing: 1px; }
 
 /* =========================================
-   5. MUSICA (DETTAGLIATA)
+   5. MUSICA (BOTTONI E LINK)
    ========================================= */
 .music-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
 .music-card {
@@ -97,15 +97,36 @@ body {
     border-radius: 15px;
     border-top: 5px solid var(--primary-red);
     transition: var(--transition);
-    text-align: left; /* Allineamento per leggere bene i dettagli */
+    text-align: left;
 }
 .music-card:hover { border-top-color: var(--accent-gold); transform: translateY(-5px); }
 .music-card h3 { color: var(--accent-gold); margin-bottom: 15px; text-align: center; font-family: 'Playfair Display', serif; }
 .music-card p { font-size: 0.9rem; color: #ccc; margin-bottom: 8px; }
 .music-card strong { color: var(--accent-gold); }
 
+/* Stile Bottone Musica */
+.btn-music {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--primary-red);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+.btn-music:hover {
+    background-color: transparent;
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
 /* =========================================
-   6. CURIOSITÀ (GRIGLIA FLUIDA)
+   6. CURIOSITÀ (NESSUNA SOVRAPPOSIZIONE)
    ========================================= */
 .curiosita-grid {
     display: grid;
@@ -123,7 +144,7 @@ body {
 .num-curiosita { font-size: 1.5rem; color: var(--primary-red); font-weight: 800; margin-bottom: 10px; display: block; }
 
 /* =========================================
-   7. GALLERIA (SOLO FOTO)
+   7. GALLERIA
    ========================================= */
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
 .gallery-item { position: relative; height: 300px; overflow: hidden; border-radius: 12px; border: 1px solid #333; }
