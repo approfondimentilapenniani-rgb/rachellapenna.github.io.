@@ -341,9 +341,7 @@ footer { text-align: center; padding: 60px; border-top: 1px solid var(--accent-g
         font-size: 0.8rem;
     }
 }
-/* =========================================
-   STILE FORM E CONTATTI
-   ========================================= */
+
 .barnum-form {
     background: #111;
     padding: 30px;
@@ -384,4 +382,9 @@ footer { text-align: center; padding: 60px; border-top: 1px solid var(--accent-g
     .contact-wrapper {
         grid-template-columns: 1fr !important;
     }
+}
+.info-section a:hover {
+    color: var(--accent-gold) !important;
+    text-decoration: underline;
+    transition: 0.3s;
 }
