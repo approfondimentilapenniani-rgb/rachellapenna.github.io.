@@ -341,3 +341,47 @@ footer { text-align: center; padding: 60px; border-top: 1px solid var(--accent-g
         font-size: 0.8rem;
     }
 }
+/* =========================================
+   STILE FORM E CONTATTI
+   ========================================= */
+.barnum-form {
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #222;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: #050505;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+@media (max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+}
